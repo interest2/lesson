@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 当Mapper接口和XML文件关联的时候， namespace的值就需要配置成接口的全限定名称 -->
+<mapper namespace="com.wejava.lesson.mapper.LessonMapper">
+
+    <resultMap id="RM-APPLYJOB" type="com.wejava.lesson.model.LessonBean">
+        <result property="id" column="id"/>
+        <result property="course" column="course"/>
+        <result property="category" column="category"/>
+        <result property="level" column="level"/>
+        <result property="credit" column="credit"/>
+        <result property="createDate" column="create_date"/>
+    </resultMap>
+
+    <insert id="create" parameterType="LessonBean" useGeneratedKeys="true" keyProperty="id">
+        insert into lesson(course,category,level,credit,create_date) values(#{course},#{category},#{level},#{credit},#{createDate})
+        <selectKey resultType="int" order="AFTER">
+            SELECT
+            @@IDENTITY
+        </selectKey>
+    </insert>
+
+    <update id="update" parameterType="LessonBean">
+        update
+        lesson
+        set
+        category = #{category}, level = #{level}, credit = #{credit}, create_date = #{createDate}
+        where course = #{course}
+    </update>
+
+    <select id="findAll" resultMap="RM-APPLYJOB" parameterType="java.util.HashMap">
+        select * from lesson where 1=1
+        ORDER BY id
+    </select>
+
+    <select id="getByCourse" resultMap="RM-APPLYJOB" parameterType="java.lang.String">
+        select * from lesson where course=#{course}
+    </select>
+
+</mapper>
