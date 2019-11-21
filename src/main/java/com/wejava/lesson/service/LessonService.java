@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface LessonService {
 
-    void createJob(LessonBean lessonBean);
+    void create(LessonBean lessonBean);
 
-    void updateJob(LessonBean lessonBean);
+    void update(LessonBean lessonBean);
+
+    void delete(int id);
 
     List<LessonBean> findAllJob();
 

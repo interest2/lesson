@@ -17,13 +17,18 @@ public class LessonServiceImpl implements LessonService {
     private LessonMapper lessonMapper;
 
     @Override
-    public void createJob(LessonBean lessonBean){
+    public void create(LessonBean lessonBean){
         lessonMapper.create(lessonBean);
     }
 
     @Override
-    public void updateJob(LessonBean lessonBean){
+    public void update(LessonBean lessonBean){
         lessonMapper.update(lessonBean);
+    }
+
+    @Override
+    public void delete(int id){
+        lessonMapper.delete(id);
     }
 
     @Override

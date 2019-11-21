@@ -22,6 +22,10 @@
         </selectKey>
     </insert>
 
+    <select id="delete" resultMap="RM-APPLYJOB" parameterType="java.lang.String">
+        delete from lesson where id=#{id}
+    </select>
+
     <update id="update" parameterType="LessonBean">
         update
         lesson
