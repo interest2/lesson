@@ -6,11 +6,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class OpenIdUtil {
-    public static String getCourse(String appid,String code,String secret) {
+public class GetParamUtil {
+    public static String getParam(String url) {
         BufferedReader in = null;
-        String url="https://api.weixin.qq.com/sns/jscode2session?appid="
-                +appid+"&secret="+secret+"&js_code="+code+"&grant_type=authorization_code";
+
         try {
             URL weChatUrl = new URL(url);
             // 打开和URL之间的连接
@@ -39,5 +38,6 @@ public class OpenIdUtil {
                 e2.printStackTrace();
             }
         }
+
     }
 }

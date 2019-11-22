@@ -15,14 +15,12 @@
     </resultMap>
 
     <insert id="create" parameterType="LessonBean" useGeneratedKeys="true" keyProperty="id">
-        insert into lesson(course,category,level,credit,create_date) values(#{course},#{category},#{level},#{credit},#{createDate})
-        <selectKey resultType="int" order="AFTER">
-            SELECT
-            @@IDENTITY
-        </selectKey>
+        insert into
+        lesson (course,category,level,credit,create_date)
+        values (#{course},#{category},#{level},#{credit},#{createDate})
     </insert>
 
-    <select id="delete" resultMap="RM-APPLYJOB" parameterType="java.lang.String">
+    <select id="delete" parameterType="java.lang.Integer">
         delete from lesson where id=#{id}
     </select>
 
@@ -34,7 +32,7 @@
         where course = #{course}
     </update>
 
-    <select id="findAll" resultMap="RM-APPLYJOB" parameterType="java.util.HashMap">
+    <select id="getAll" resultMap="RM-APPLYJOB" parameterType="java.util.HashMap">
         select * from lesson where 1=1
         ORDER BY id
     </select>

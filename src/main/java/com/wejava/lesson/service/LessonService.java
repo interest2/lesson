@@ -12,7 +12,7 @@ public interface LessonService {
 
     void delete(int id);
 
-    List<LessonBean> findAllJob();
+    List<LessonBean> getAll();
 
     LessonBean getJobByCourse(String course);
 }

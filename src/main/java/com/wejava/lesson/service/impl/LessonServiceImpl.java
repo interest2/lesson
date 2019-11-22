@@ -32,9 +32,9 @@ public class LessonServiceImpl implements LessonService {
     }
 
     @Override
-    public List<LessonBean> findAllJob() {
+    public List<LessonBean> getAll() {
         Map<String, Object> paramMap = new HashMap<>();
-        return lessonMapper.findAll(paramMap);
+        return lessonMapper.getAll(paramMap);
     }
 
     @Override

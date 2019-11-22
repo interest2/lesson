@@ -14,7 +14,7 @@ public interface LessonMapper {
 
     void delete(int id);
 
-    List<LessonBean> findAll(Map<String, Object> paramMap);
+    List<LessonBean> getAll(Map<String, Object> paramMap);
 
     LessonBean getByCourse(String course);
 

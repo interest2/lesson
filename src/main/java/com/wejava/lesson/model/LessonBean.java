@@ -7,7 +7,7 @@ public class LessonBean {
     private int id;
     private String course;
     private String category;
-    private int level;
+    private String level;
     private int credit;
     private Date createDate;
 
@@ -35,11 +35,11 @@ public class LessonBean {
         this.category = category;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
@@ -57,5 +57,16 @@ public class LessonBean {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Lesson {" +
+                "course=" + course +
+                ", category='" + category + '\'' +
+                ", level=" + level +
+                ", credit=" + credit +
+                ", createDate=" + createDate +
+                '}';
     }
 }
